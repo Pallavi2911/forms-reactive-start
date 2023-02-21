@@ -38,10 +38,32 @@ export class AppComponent implements OnInit {
     //on individual control, and want to react to that.
     //this.signupForm.valueChanges.subscribe((value) => console.log(value));
     //this.signupForm.statusChanges.subscribe((status) => console.log(status));
+
+    //set value
+    this.signupForm.setValue({
+      userData: {
+        username: 'Max',
+        email: 'max@test.com',
+      },
+      gender: 'female',
+      hobbies: [],
+    });
+
+    //patch value
+    this.signupForm.patchValue({
+      userData: {
+        username: 'Ron',
+      },
+    });
   }
 
   onSubmit() {
     console.log(this.signupForm);
+    //to reset form
+    // pass gender object to reset to specific value
+    this.signupForm.reset({
+      gender: 'male',
+    });
   }
 
   onAddHobby() {
