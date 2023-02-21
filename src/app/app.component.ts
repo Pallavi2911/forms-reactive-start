@@ -12,13 +12,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = new FormGroup({
-      //The required validator don't have parenthesis after it because you don't want to execute this method.
-      //It is a static method made available by validators here.Instead, you only want to pass the reference to this method.
-      //Angular will execute the method whenever it detects that the input of this form control changed.
-      //So it just needs to have a reference on what it should execute at this point of time.So this is the required validator.
-      username: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      gender: new FormControl('male'),
+      userData: new FormGroup({
+        //The required validator don't have parenthesis after it because you don't want to execute this method.
+        //It is a static method made available by validators here.Instead, you only want to pass the reference to this method.
+        //Angular will execute the method whenever it detects that the input of this form control changed.
+        //So it just needs to have a reference on what it should execute at this point of time.So this is the required validator.
+        username: new FormControl(null, Validators.required),
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        gender: new FormControl('male'),
+      }),
     });
   }
 
