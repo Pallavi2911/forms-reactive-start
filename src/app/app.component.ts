@@ -32,6 +32,12 @@ export class AppComponent implements OnInit {
       gender: new FormControl('male'),
       hobbies: new FormArray([]),
     });
+
+    //observables valueChanges and statusChanges, you can listen to it or you can subscribe to
+    //if you really want to closely watch what happens in your form or again,
+    //on individual control, and want to react to that.
+    //this.signupForm.valueChanges.subscribe((value) => console.log(value));
+    //this.signupForm.statusChanges.subscribe((status) => console.log(status));
   }
 
   onSubmit() {
